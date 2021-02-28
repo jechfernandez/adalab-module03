@@ -1,6 +1,6 @@
 import React from 'react';
 import Home from './Home';
-import Style from '../stylesheets/Style.scss';
+import '../stylesheets/Style.scss';
 import Pricing from './Pricing';
 import About from './About';
 import {Route, Switch} from 'react-router-dom';
@@ -15,9 +15,17 @@ class App extends React.Component {
               <div className='container'></div>
               <Home />
             </Route>
-            <Route path="/" component={Home} />
+            <Route path="/pricing">
+              <div className='container'></div>
+              <Pricing/>
+            </Route>
+            <Route path="/about">
+              <div className='container'></div>
+              <About/>
+            </Route>
+            {/* <Route path="/" component={Home} />
             <Route path="/pricing" component={Pricing} />
-            <Route path="/about" component={About} />
+            <Route path="/about" component={About} /> */}
           </Switch>
         </main>
       </div>
