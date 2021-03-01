@@ -1,36 +1,43 @@
-import React from 'react';
-import Home from './Home';
-import '../stylesheets/Style.scss';
-import Pricing from './Pricing';
-import About from './About';
-import {Route, Switch} from 'react-router-dom';
+import React from "react";
+import Home from "./Home";
+import Pricing from "./Pricing";
+import About from "./About";
+import { Link, Route, Switch } from "react-router-dom";
+import "../stylesheets/App.scss";
 
-class App extends React.Component {
-  render () {
+
+export default function App() {
+
     return (
       <div>
+        <header>
+          <nav>
+            <ul>
+              <li>
+                <Link className="link" to="/">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link className="link" to="/about">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link className="link" to="/pricing">
+                  Pricing
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </header>
         <main>
           <Switch>
-            <Route path="/home">
-              <div className='container'></div>
-              <Home />
-            </Route>
-            <Route path="/pricing">
-              <div className='container'></div>
-              <Pricing/>
-            </Route>
-            <Route path="/about">
-              <div className='container'></div>
-              <About/>
-            </Route>
-            {/* <Route path="/" component={Home} />
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
             <Route path="/pricing" component={Pricing} />
-            <Route path="/about" component={About} /> */}
           </Switch>
         </main>
       </div>
     );
   }
-}
-
-export default App;
