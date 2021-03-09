@@ -1,19 +1,19 @@
-import { render, screen } from '@testing-library/react';
+import {render, screen} from '@testing-library/react';
 import App from './App';
 
-test('renders aprendiendo react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/aprendiendo react/i);
-  expect(linkElement).toBeInTheDocument();
+test ('renders aprendiendo react link', () => {
+  render (<App />);
+  const linkElement = screen.getByText (/aprendiendo react/i);
+  expect (linkElement).toBeInTheDocument ();
 });
 
-test('check if "Aprendiendo React" is a link', () => {
+test ('check if "Aprendiendo React" is a link', () => {
   // arrange
-  render(<App />);
+  render (<App />);
   // act
-  const linkElement = screen.getByText(/aprendiendo react/i);
-  console.log(linkElement.nodeName); // esto consolea A porque los links se crean con <a href="...">texto</a>
+  const linkElement = screen.getByText (/aprendiendo react/i);
+  console.log (linkElement.nodeName); // esto consolea A porque los links se crean con <a href="...">texto</a>
   const linkTagName = linkElement.nodeName;
   // assert
-  expect(linkTagName).toBe(linkElement.nodeName);
+  expect (linkTagName).toBe (linkElement.nodeName);
 });
